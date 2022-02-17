@@ -93,7 +93,7 @@ Widget gradientContainer(double width, Widget child,{bool gradient =false,double
   );
 }
 
-Widget gradientContainerNoborder(double width,Widget child, {height = 45}) {
+Widget gradientContainerNoborder(double width,Widget child, {height = 40.0}) {
 
   return Container(
     width: width.w,
@@ -307,12 +307,13 @@ Widget textFieldNoIcon(
         filled: true,
         helperText: isOptional? 'اختياري': null,
         helperStyle: TextStyle(color: pink, fontSize: fontSize.sp, fontFamily: 'Cairo'),
-        hintStyle: TextStyle(color: black, fontSize: fontSize.sp, fontFamily: 'Cairo'),
+        hintStyle: TextStyle(color: grey, fontSize: fontSize.sp, fontFamily: 'Cairo'),
         fillColor: textFieldBlack2.withOpacity(0.70),
         labelStyle: TextStyle(color: white, fontSize: fontSize.sp),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r)),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: pink,width: 1)),
-        labelText: key,
+
+        hintText: key,
 
         contentPadding: EdgeInsets.all(10.h)),
   );
@@ -340,12 +341,12 @@ Widget textFieldDesc(
       decoration: InputDecoration(
           isDense: false,
           filled: true,
-          hintStyle: TextStyle(color: black, fontSize: fontSize.sp, fontFamily: 'Cairo'),
+          hintStyle: TextStyle(color: grey, fontSize: fontSize.sp, fontFamily: 'Cairo'),
           fillColor: textFieldBlack2.withOpacity(0.70),
           labelStyle: TextStyle(color: white, fontSize: fontSize.sp,), alignLabelWithHint: true,
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8.r)),
           focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: pink,width: 1)),
-          labelText: key,
+          hintText: key,
           contentPadding: EdgeInsets.all(10.h)),
     ),
   );

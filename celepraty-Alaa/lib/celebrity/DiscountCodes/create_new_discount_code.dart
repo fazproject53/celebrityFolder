@@ -242,7 +242,7 @@ class _CreateNewDiscountCodeHomeState extends State<CreateNewDiscountCodeHome> {
                             alignment: Alignment.topRight,
                               margin: EdgeInsets.only(right: 20.w,top: 10.h),
                               child: InkWell(
-                                child: gradientContainerNoborder(120,
+                                child: gradientContainerNoborder2(120,40,
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.center,
                                       children: [
@@ -255,7 +255,8 @@ class _CreateNewDiscountCodeHomeState extends State<CreateNewDiscountCodeHome> {
                                         ),
                                         text(context, 'تاريخ البداية', 15.sp, white, fontWeight: FontWeight.bold),
                                       ],
-                                    )),
+                                    ),
+                                ),
                                 onTap: () {
                                   tableCalendar(context, current);
                                 },
@@ -264,9 +265,9 @@ class _CreateNewDiscountCodeHomeState extends State<CreateNewDiscountCodeHome> {
                         //end date
                         Container(
                           alignment: Alignment.topRight,
-                          margin: EdgeInsets.only(right: 20.w,top: 20.h),
+                          margin: EdgeInsets.only(right: 20.w,top: 10.h),
                           child: InkWell(
-                            child: gradientContainerNoborder(120,
+                            child: gradientContainerNoborder2(120,40,
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [

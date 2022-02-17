@@ -34,7 +34,7 @@ class _HomeBodyDiscountState extends State<HomeBodyDiscount> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-     
+      bottom: false,
       child: Column(
         children: [
           SizedBox(
@@ -98,7 +98,7 @@ class _HomeBodyDiscountState extends State<HomeBodyDiscount> {
                               children: [
                                 Container(
                                   margin: EdgeInsets.only(top: 10.h, right: 15.w),
-                                  height: 200.h,
+                                  height: 180.h,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.start,
                                     children: [

@@ -59,16 +59,16 @@ class _GiftState extends State<Gift> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                   
+
                       Align(
-                     
+
                         alignment: Alignment.bottomRight,
                         child: Padding(
                           padding: EdgeInsets.only(right: 10.w),
                             child:text(context, "اهداء ل"+giftType[i], 18, white,fontWeight:FontWeight.bold,)
                         )
                         ),
-                       
+
 //date and icon-------------------------------------------------------------
 
                      Padding(
@@ -77,14 +77,14 @@ class _GiftState extends State<Gift> {
                               alignment: Alignment.topLeft,
                               child: Icon(vieduoIcon,color:deepwhite,size:40.sp) ),
                      ),
-                           
+
                     ],
                   )),
             ),
 
 //detaiels-----------------------------------------
 
-   Expanded(flex: 1, child: 
+   Expanded(flex: 1, child:
    Row(
    children: [
 //type-------------------------------------------------
@@ -115,13 +115,13 @@ class _GiftState extends State<Gift> {
    )],
      )),   ],
    ))
-         
-         
-         
-         
-         
-         
-         
+
+
+
+
+
+
+
           ],
         ),
         bottomLeft: 10,
