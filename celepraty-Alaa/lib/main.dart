@@ -1,19 +1,9 @@
 import 'package:celepraty/Models/Variabls/varaibles.dart';
-import 'package:celepraty/celebrity/Requests/ReguistMainPage.dart';
-import 'package:celepraty/celebrity/blockList.dart';
-import 'package:celepraty/celebrity/celebrityHomePage.dart';
-import 'package:celepraty/celebrity/orders/gifttingForm.dart';
-import 'package:celepraty/celebrity/setting/celebratyProfile.dart';
-import 'package:celepraty/celebrity/setting/profileInformation.dart';
 import 'package:celepraty/introduction_screen/src/introduction_screen_main.dart';
-import 'package:celepraty/user/buildAdvOrder.dart';
-import './celebrity/orders/advArea.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:device_preview/device_preview.dart';
 
-import 'Account/Singup.dart';
-import 'Account/logging.dart';
 
 void main() => runApp(
       DevicePreview(
@@ -37,8 +27,8 @@ class MyApp extends StatelessWidget {
         builder: () => MaterialApp(
             debugShowCheckedModeBanner: false,
             theme: ThemeData(fontFamily: "Cairo",
-              colorScheme: ColorScheme.fromSwatch().copyWith(primary: pinkLigth),),
-            home: SingUp()
+              colorScheme: ColorScheme.fromSwatch().copyWith(primary: purple),),
+            home: const MyHomePage()
             //----------------------------------
           ),
       ),

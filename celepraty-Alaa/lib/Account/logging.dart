@@ -1,3 +1,4 @@
+import 'package:celepraty/MainScreen/main_screen_navigation.dart';
 import 'package:celepraty/Models/Methods/method.dart';
 import 'package:celepraty/Models/Variabls/varaibles.dart';
 import 'package:celepraty/celebrity/setting/celebratyProfile.dart';
@@ -75,7 +76,7 @@ class _LoggingState extends State<Logging> {
                           347,
                           buttoms(context, 'تسجيل الدخول', 13, white, () {
                             Navigator.push(context,
-                                MaterialPageRoute(builder: (_) => celebratyProfile()));
+                                MaterialPageRoute(builder: (_) => MainScreen()));
                           })),
                       SizedBox(
                         height: 34.h,

@@ -73,6 +73,10 @@ IconData gift =Icons.card_giftcard_rounded;
 IconData like=Icons.favorite_outlined;
 IconData disLike = Icons.favorite_border;
 IconData playViduo = Icons.play_arrow_rounded;
+IconData chatIcon = Icons.chat;
+IconData homeIcon = Icons.home;
+IconData exploreIcon = Icons.explore_outlined;
+IconData notificationIcon = Icons.notifications;
 //controller name----------------------------------------------------------------
 TextEditingController nameConttroller= TextEditingController();
 TextEditingController passConttroller=TextEditingController();
