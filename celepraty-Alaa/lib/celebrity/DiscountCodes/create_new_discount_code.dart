@@ -66,6 +66,7 @@ class _CreateNewDiscountCodeHomeState extends State<CreateNewDiscountCodeHome> {
                     key: _formKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ///Title
                         Container(
@@ -287,9 +288,18 @@ class _CreateNewDiscountCodeHomeState extends State<CreateNewDiscountCodeHome> {
                           ),
                         ),
                         ///Save box
-                        Container(
-                          margin: EdgeInsets.only(top: 20.h, right: 20.w, left: 20.w,bottom: 20.h),
-                            child: gradientContainerNoborder(500.w,  buttoms(context, 'حفظ', 15, white, (){})),),
+                        SizedBox(
+                          height: 50.h,
+                        ),
+                        padding(
+                          15,
+                          15,
+                          gradientContainerNoborder(getSize(context).width,
+                              buttoms(context, 'إرسال', 20, white, () {})),
+                        ),
+                        SizedBox(
+                          height: 50.h,
+                        ),
                       ],
                     ),
                   ),

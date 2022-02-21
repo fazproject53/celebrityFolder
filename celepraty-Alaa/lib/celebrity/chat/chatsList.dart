@@ -18,7 +18,7 @@ class _chatsListState extends State<chatsList> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: drowAppBar( 'المحادثات',  context, color: purple),
+        appBar: drowAppBar( 'المحادثات',  context),
         body: SafeArea(
           child: Container(
             margin: EdgeInsets.only(top: 10.h, right: 15.w),

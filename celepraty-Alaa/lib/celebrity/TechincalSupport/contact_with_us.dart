@@ -72,6 +72,7 @@ class _ContactWithUsHomeState extends State<ContactWithUsHome> {
                     key: _formKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         ///Title
                         Container(

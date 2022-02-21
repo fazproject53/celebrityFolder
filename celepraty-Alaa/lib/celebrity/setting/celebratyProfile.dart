@@ -30,7 +30,6 @@ class _celebratyProfileState extends State<celebratyProfile> {
     'التفاعلات',
     'الشروط والاحكام',
     'قائمة الحظر',
-    'المحادثات',
     'الدعم',
     'تسجيل الخروج'
   ];
@@ -66,7 +65,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
 
     PrivacyPolicyMain(),
     blockList(),
-    chatsList(),
+
     ContactWithUsMain(),
     Logging()
   ];

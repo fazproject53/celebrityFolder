@@ -25,7 +25,7 @@ class _celebrityHomePageState extends State<celebrityHomePage> {
                   flex: 1,
                   child: Container(
                     margin: EdgeInsets.all(20),
-                          alignment: Alignment.bottomCenter,
+                          alignment: Alignment.center,
                     child: SizedBox(
                         height: 50.h,
                           width: 900.w,
