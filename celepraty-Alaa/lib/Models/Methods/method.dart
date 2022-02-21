@@ -373,7 +373,7 @@ Widget textFieldNoIcon2(
         filled: true,
         hintStyle: TextStyle(color: black, fontSize: fontSize.sp, fontFamily: 'Cairo'),
         fillColor: textFieldBlack2.withOpacity(0.70),
-        labelStyle: TextStyle(color: white, fontSize: fontSize.sp),
+        labelStyle: TextStyle(color: grey, fontSize: fontSize.sp),
         border: OutlineInputBorder(borderRadius: BorderRadius.only( bottomRight: Radius.circular(10.0), topRight: Radius.circular(10.0),)),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: pink,width: 1)),
         labelText: key,
@@ -491,6 +491,24 @@ Widget buildCkechboxList(list){
   return Row(mainAxisAlignment: MainAxisAlignment.start,
       children: w);
 }
+Widget buildCkechboxList2(list){
+  List<Widget> w = [];
+  Widget cb;
+  for(var i =0 ; i< list.length; i++){
+    cb= Expanded(
+      child: Row(
+          children: [
+            Checkbox(value: false, onChanged: (value){}),
+            Text(list[i])
+          ],
+        ),
+    );
+    w.add(cb);}
+
+  return Row(mainAxisAlignment: MainAxisAlignment.start,
+      children: w);
+}
+
 
 divider({double thickness= 2, double indent=15,double endIndent=15,}){
   return Align(
@@ -562,7 +580,7 @@ Widget textFieldDescOnChange (
 
 //Drow app bar----------------------------------------------------
 
-drowAppBar(String title, BuildContext context, { Color color = deepwhite}){
+drowAppBar(String title, BuildContext context, { color = deepwhite}){
   return AppBar(
     title: Text(title,style:TextStyle(
         fontSize:22.sp,
@@ -580,13 +598,13 @@ drowAppBar(String title, BuildContext context, { Color color = deepwhite}){
         Navigator.pop(context);
       },
     ),
-    backgroundColor: deepwhite,
+    backgroundColor: color,
     elevation: 0,
 
   );
 }
 
-drawAppBar(Widget title, BuildContext context ,{ Color color = deepwhite}){
+drawAppBar(Widget title, BuildContext context ,{ Color color = deepwhite }){
   return AppBar(
     title: title,
     centerTitle: true,

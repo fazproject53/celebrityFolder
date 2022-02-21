@@ -44,7 +44,7 @@ class profileInformaion extends StatefulWidget{
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                       SizedBox(height: 30.h,),
-                        padding(10, 12, Container( alignment : Alignment.topRight,child: Text('قم بملئ او تعديل \n معلوماتك الشخصية', style: const TextStyle(fontSize: 18, color: textBlack , fontFamily: 'Cairo'), )),),
+                        padding(10, 12, Container( alignment : Alignment.topRight,child: Text('قم بملئ او تعديل  معلوماتك الشخصية', style: const TextStyle(fontSize: 18, color: textBlack , fontFamily: 'Cairo'), )),),
 
                         //========================== form ===============================================
 
@@ -69,7 +69,7 @@ class profileInformaion extends StatefulWidget{
                                   value: country, dropdownColor: textBlack, icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white,), items: items.map((String items) {
                                   return DropdownMenuItem(value: items, child: paddingg(15, 15, 5,Text(items),),);}).toList(),
                                            onChanged: (String? newValue) {setState(() {country = newValue!;});},
-                                           style: TextStyle(color: white, fontSize: 14.sp),
+                                           style: TextStyle(color: grey, fontSize: 14.sp),
                                            isExpanded: true, ),
                           ),
                         ),),
@@ -81,7 +81,7 @@ class profileInformaion extends StatefulWidget{
                             child: DropdownButtonFormField(  decoration: InputDecoration.collapsed(hintText: city,),value: city,dropdownColor: textBlack, icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white,), items: items2.map((String items) {
                               return DropdownMenuItem(value: items, child: paddingg(15, 15, 5,Text(items),),);}).toList(),
                               onChanged: (String? newValue) {setState(() {city = newValue!;});},
-                              style: TextStyle(color: white, fontSize: 14.sp),
+                              style: TextStyle(color: grey, fontSize: 14.sp),
                               isExpanded: true,),),
                         ),),
 
@@ -92,7 +92,7 @@ class profileInformaion extends StatefulWidget{
                             child: DropdownButtonFormField( decoration: InputDecoration.collapsed(hintText: category,),value: category,dropdownColor: textBlack, icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white,), items: items3.map((String items) {
                               return DropdownMenuItem(value: items, child: paddingg(15, 15, 5,Text(items),),);}).toList(),
                               onChanged: (String? newValue) {setState(() {category = newValue!;});},
-                              style: TextStyle(color: white, fontSize: 14.sp),
+                              style: TextStyle(color: grey, fontSize: 14.sp),
                               isExpanded: true,),),
                           ),),
 

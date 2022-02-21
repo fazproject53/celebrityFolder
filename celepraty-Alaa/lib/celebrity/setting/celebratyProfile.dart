@@ -1,16 +1,18 @@
 import 'package:celepraty/Models/Methods/method.dart';
 import 'package:celepraty/Models/Variabls/varaibles.dart';
+import 'package:celepraty/Users/Explowr/Explower.dart';
 import 'package:celepraty/celebrity/Brand/create_your_brand.dart';
 import 'package:celepraty/celebrity/DiscountCodes/discount_codes_main.dart';
 import 'package:celepraty/celebrity/PrivacyPolicy/privacy_policy.dart';
 import 'package:celepraty/celebrity/Requests/ReguistMainPage.dart';
 import 'package:celepraty/celebrity/TechincalSupport/contact_with_us.dart';
 import 'package:celepraty/celebrity/blockList.dart';
+import 'package:celepraty/celebrity/celebrityHomePage.dart';
 import 'package:celepraty/celebrity/chat/chatsList.dart';
 import 'package:celepraty/celebrity/setting/profileInformation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:celepraty/Account/logging.dart';
 class celebratyProfile extends StatefulWidget {
   _celebratyProfileState createState() => _celebratyProfileState();
 }
@@ -51,9 +53,9 @@ class _celebratyProfileState extends State<celebratyProfile> {
   final List<Widget> page = [
     profileInformaion(),
 
+    Explower(),
     profileInformaion(),
-    profileInformaion(),
-    profileInformaion(),
+    celebrityHomePage(),
 
     RequestMainPage(),
     YourBrandMain(),
@@ -66,6 +68,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
     blockList(),
     chatsList(),
     ContactWithUsMain(),
+    Logging()
   ];
 
   @override
@@ -167,7 +170,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
                       width: 30,
                       height: 30,
                       child: Image.asset(
-                        'assets/image/facebook.png',
+                        'assets/image/icon- faceboock.png',
                       )),
                 ),
                 padding(
@@ -177,7 +180,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
                     width: 30,
                     height: 30,
                     child: Image.asset(
-                      'assets/image/instagram.png',
+                      'assets/image/icon- insta.png',
                     ),
                   ),
                 ),
@@ -188,7 +191,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
                     width: 30,
                     height: 30,
                     child: Image.asset(
-                      'assets/image/snapchat.png',
+                      'assets/image/icon- snapchat.png',
                     ),
                   ),
                 ),
@@ -199,7 +202,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
                     width: 30,
                     height: 30,
                     child: Image.asset(
-                      'assets/image/twitter.png',
+                      'assets/image/icon- twitter.png',
                     ),
                   ),
                 ),
@@ -220,6 +223,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
                   ],
                 ),
               ),
+              SizedBox(height: 30.h,)
             ]),
           ),
         ),

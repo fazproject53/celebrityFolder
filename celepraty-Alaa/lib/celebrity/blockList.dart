@@ -14,9 +14,23 @@ class _blockListState extends State<blockList> {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: Scaffold(
-        appBar: drowAppBar('المحظورين',context),
+        appBar: AppBar(title: const Text("قائمة المحظورين"),flexibleSpace: Container(decoration:  BoxDecoration(gradient: LinearGradient(
+          begin: Alignment(0.7, 7.0),
+          end: Alignment(-0.69, -1.0),
+          colors: [Color(0xff31A8DB).withOpacity(0.60), Color(0xffE579D6).withOpacity(0.85)],
+          stops: [0.0, 1.0],
+        ),),),),
       body: Stack(children: [
-
+        Container(
+          height: 300.h,
+          width: 1000.w,
+          decoration:   BoxDecoration(gradient: LinearGradient(
+            begin: Alignment(0.7, 2.0),
+            end: Alignment(-0.69, -1.0),
+            colors: [Color(0xff0ab3d0).withOpacity(0.60), Color(0xffe468ca).withOpacity(0.80)],
+            stops: [0.0, 1.0],
+          ),borderRadius: BorderRadius.only(bottomLeft: Radius.circular(30), bottomRight: Radius.circular(30))),
+        ),
         paddingg( 10,10,20,ListView.builder(
             itemCount: 5,
             itemBuilder: (context, index) {
@@ -33,7 +47,7 @@ class _blockListState extends State<blockList> {
                         alignment: Alignment.centerRight,
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20.0),
-                          child:Image.asset('assets/image/user.png', fit: BoxFit.cover,),),
+                          child:Image.asset('assets/image/user.png', fit: BoxFit.fill, height: 90.h,),),
                       ),),
 
                         SizedBox(width: 10,),
@@ -52,7 +66,7 @@ class _blockListState extends State<blockList> {
                       child: Container(
                           width: 80.w,
                           height: 33.h,
-                          decoration:  BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), border: Border.all(color: black)),
+                          decoration:  BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10)), border: Border.all(color: deepBlack)),
                         child: Center(child: text(context, 'ابلاغ', 12, black,align: TextAlign.center)),
                          ), onTap: (){}),
 

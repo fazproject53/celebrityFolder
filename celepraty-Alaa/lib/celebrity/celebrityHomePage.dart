@@ -19,17 +19,25 @@ class _celebrityHomePageState extends State<celebrityHomePage> {
       textDirection: TextDirection.rtl,
       child: Scaffold(
         appBar: drowAppBar('الصفحة الرئيسية', context),
-            body: Container(
-                    alignment: Alignment.bottomCenter,
-              height: 800.h,
-              child: SizedBox(
-                  height: 50.h,
-                    child: InkWell(child: gradientContainerNoborder(400.w, Center(child: text(context, 'اطلب حالا', 16, white, fontWeight: FontWeight.bold) )),
-                        onTap: (){ showBottomSheett(context,BottomSheetMenue());}),
+            body: Column(
+              children: [
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: EdgeInsets.all(20),
+                          alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                        height: 50.h,
+                          width: 900.w,
+                          child: InkWell(child: gradientContainerNoborder(400.w, Center(child: text(context, 'اطلب حالا', 16, white, fontWeight: FontWeight.bold) )),
+                              onTap: (){ showBottomSheett(context,BottomSheetMenue());}),
 
-            ),
+                  ),
 
           ),
+                ),
+              ],
+            ),
 
       ),
     );

@@ -23,6 +23,7 @@ class _gifttingFormState extends State<gifttingForm>{
     return  Directionality(
       textDirection: TextDirection.rtl,
       child:Scaffold(
+        appBar: drowAppBar('طلب اهداء', context),
           body: SingleChildScrollView(
           child: Column(
             children: [
@@ -44,12 +45,12 @@ class _gifttingFormState extends State<gifttingForm>{
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
               SizedBox(height: 20.h,),
-                padding(10, 12, Container( alignment : Alignment.topRight,child:  text(context, ' قم بملئ   \n البيانات التالية',18,textBlack,fontWeight: FontWeight.bold,
+                padding(10, 12, Container( alignment : Alignment.topRight,child:  text(context, ' قم بملئ   البيانات التالية',18,textBlack,fontWeight: FontWeight.bold,
                   family: 'DINNextLTArabic-Regular-2', )),),
 
       //========================== form ===============================================
 
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
 
 
                 paddingg(15, 15, 12,SizedBox(
@@ -59,7 +60,7 @@ class _gifttingFormState extends State<gifttingForm>{
                     child: DropdownButtonFormField( decoration: InputDecoration.collapsed(hintText: ocassion,),value: ocassion, dropdownColor: textBlack, icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white,), items: items2.map((String items) {
                       return DropdownMenuItem(value: items, child: paddingg(15.w, 15.w, 5.h,Text(items),),);}).toList(),
                       onChanged: (String? newValue) {setState(() {ocassion = newValue!;});},
-                      style: TextStyle(color: white, fontSize: 14.sp),
+                      style: TextStyle(color: grey, fontSize: 14.sp),
                       isExpanded: true,),),
                 ),),
 
@@ -70,7 +71,7 @@ class _gifttingFormState extends State<gifttingForm>{
                     child: DropdownButtonFormField( decoration: InputDecoration.collapsed(hintText: type,),value: type, dropdownColor: textBlack, icon: const Icon(Icons.keyboard_arrow_down, color: Colors.white,), items: items3.map((String items) {
                       return DropdownMenuItem(value: items, child: paddingg(15.w, 15.w, 5.h,Text(items),),);}).toList(),
                       onChanged: (String? newValue) {setState(() {type = newValue!;});},
-                      style: TextStyle(color: white, fontSize: 14.sp),
+                      style: TextStyle(color: grey, fontSize: 14.sp),
                       isExpanded: true,),),
                 ),),
 
@@ -78,10 +79,10 @@ class _gifttingFormState extends State<gifttingForm>{
                   children: [
                     Expanded(
                         child: paddingg(3.w, 15.w, 12.h,textFieldNoIcon(context, 'من', 12.sp, false, mycontroller,(String? value) {if (value == null || value.isEmpty) {
-                          return 'Please enter some text';} return null;},null),),),
+                          return 'Please enter some text';} return null;},false),),),
                     Expanded(
                       child: paddingg(15.w, 3.w, 12.h,textFieldNoIcon(context, 'الى', 12.sp, false, mycontroller,(String? value) {if (value == null || value.isEmpty) {
-                        return 'Please enter some text';} return null;}, null),),
+                        return 'Please enter some text';} return null;}, false),),
                     ),
 
                   ],
@@ -90,7 +91,7 @@ class _gifttingFormState extends State<gifttingForm>{
                 paddingg(15.w, 15.w, 12.h,textFieldDesc(context, 'تفاصيل الاهداء', 12.sp, false, mycontroller,(String? value) {if (value == null || value.isEmpty) {
                   return 'Please enter some text';} return null;},),),
                 paddingg(15.w, 15.w, 12.h,textFieldNoIcon(context, 'ادخل كود الخصم', 12.sp, false, mycontroller,(String? value) {if (value == null || value.isEmpty) {
-                  return 'Please enter some text';} return null;},'اختياري'),),
+                  return 'Please enter some text';} return null;},false),),
 
 
                 paddingg(15.w, 15.w, 15.h,SizedBox(height: 45.h,child: InkWell(

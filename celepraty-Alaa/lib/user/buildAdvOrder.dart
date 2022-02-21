@@ -74,13 +74,11 @@ class _buildAdvOrderState extends State<buildAdvOrder> {
           controlsBuilder: (context, controls) {
             return Row(
               children: [
-                TextButton(
-                    child:  (current == getSteps().length-1)?  const Text('تاكيد'): const Text('متابعة'),
-                  onPressed: controls.onStepContinue,
-                ),
-                if(current != 0)
-                TextButton(child: const Text('الغاء'),
-                  onPressed: controls.onStepCancel,),
+                TextButton(onPressed: controls.onStepContinue,
+                child:(current !=getSteps().length-1)?const Text('متابعة'): const Text('تاكيد'), ),
+                TextButton(onPressed: controls.onStepCancel,
+                child: const Text('الغاء'),
+                  ),
               ],
             );
           },
@@ -138,7 +136,7 @@ List<Step> getSteps(){
                       alignment: Alignment.centerRight,
                       value: item, child: paddingg(15.w, 15.w, 5.h,Text(item),),);}).toList(),
                     onChanged: (String? newValue) {setState(() {categoryn = newValue!;});},
-                    style: TextStyle(color: white, fontSize: 14.sp),
+                    style: TextStyle(color: grey, fontSize: 14.sp),
                     isExpanded: true,),),
               ),),
 
@@ -153,7 +151,7 @@ List<Step> getSteps(){
                         alignment: Alignment.centerRight,
                         value: item, child: paddingg(15.w, 15.w, 5.h,Text(item),),);}).toList(),
                     onChanged: (String? newValue) {setState(() {balancen = newValue!;});},
-                    style: TextStyle(color: white, fontSize: 14.sp),
+                    style: TextStyle(color: grey, fontSize: 14.sp),
                     isExpanded: true,),),
               ),),
 
@@ -167,17 +165,17 @@ List<Step> getSteps(){
                       return DropdownMenuItem(
                         alignment: Alignment.centerRight,
                         value: item, child: paddingg(15.w, 15.w, 5.h,Text( item),),);}).toList(), onChanged: (String? newValue) {setState(() {categoryn = newValue!;});},
-                    style: TextStyle(color: white, fontSize: 14.sp),
+                    style: TextStyle(color: grey, fontSize: 14.sp),
                     isExpanded: true,),),
               ),),
 
 
               paddingg(10.w, 10.w, 12.h,textFieldNoIcon(context, 'موضوع الاعلان', 12.sp, true, subject,(String? value) {if (value == null || value.isEmpty) {
-                return 'Please enter some text';} return null;},null),),
+                return 'Please enter some text';} return null;},false),),
               paddingg(10.w, 10.w, 12.h,textFieldDesc(context, 'وصف الاعلان', 12.sp, true, desc,(String? value) {if (value == null || value.isEmpty) {
                 return 'Please enter some text';} return null;},),),
               paddingg(10.w, 10.w, 12.h,textFieldNoIcon(context, 'رابط صفحة الاعلان', 12.sp, true, pageLink,(String? value) {if (value == null || value.isEmpty) {
-                return 'Please enter some text';} return null;},null),),
+                return 'Please enter some text';} return null;},false),),
 
 
               SizedBox(height: 20,),
@@ -202,7 +200,7 @@ List<Step> getSteps(){
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   padding(10, 10, text(context, 'مالك الاعلان', 14, black, fontWeight: FontWeight.bold)),
-                  buildCkechboxList(owner),
+                  buildCkechboxList2(owner),
                 ],
               ),
               Divider(),
@@ -271,7 +269,6 @@ List<Step> getSteps(){
                   children: List.generate(6, (index) {
                     return  InkWell(
                         onTap: (){if(!selectedIndex.contains(index)){selectedIndex.add(index);}else{selectedIndex.remove(index);} setState(() {
-
                     });},
                     child: Container(
                         height: double.infinity,
@@ -340,14 +337,14 @@ List<Step> getSteps(){
                     paddingg(15.w, 15.w, 12.h,textFieldDesc(context, 'وصف الاعلان', 12.sp, true, description,(String? value) {if (value == null || value.isEmpty) {
                       return 'Please enter some text';} return null;},),),
                     paddingg(15.w, 15.w, 12.h,textFieldNoIcon(context, 'ادخل كود الخصم', 12.sp, true, couponcode,(String? value) {if (value == null || value.isEmpty) {
-                      return 'Please enter some text';} return null;},'اختياري'),),
+                      return 'Please enter some text';} return null;},false),),
 
                     SizedBox(height: 20,),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         padding( 8,20, text(context, 'مالك الاعلان', 14, black, fontWeight: FontWeight.bold)),
-                        buildCkechboxList(owner),
+                        buildCkechboxList2(owner),
                       ],
                     ),
                     Divider(),
@@ -403,9 +400,6 @@ List<Step> getSteps(){
                         });
                       },),),
                     SizedBox(height: 30.h,),
-                    padding(15.w, 15.w, gradientContainerNoborder(getSize(context).width,  buttoms(context, 'رفع الطلب', 15, white, (){})),),
-                    SizedBox(height: 30.h,),
-
 
 
 
