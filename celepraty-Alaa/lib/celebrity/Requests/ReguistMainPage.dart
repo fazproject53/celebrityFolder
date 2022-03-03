@@ -29,46 +29,47 @@ class _RequestMainPageState extends State<RequestMainPage> {
         child: Scaffold(
           appBar: drowAppBar(requestBar, context),
           body:
-              Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-            SizedBox(
-              height: 26.h,
-            ),
-//صف الاختيارات-------------------------------
-            drowRowButton(context),
-            SizedBox(
-              height: 42.h,
-            ),
-//النص-------------------------------
+          Column( children: [
 
-            Padding(
-              padding: EdgeInsets.only(left: 28.w, right: 28.w),
-              child: text(context,
-               isSelected == 1
-                  ?  "طلبات الاعلانات الخاصة بك"
-                  : isSelected == 2
-                      ? "طلبات الاهداءات الخاصة بك"
-                      : "طلبات المساحة الاعلانية الخاصة بك",
-               //,
-                18,
-                 black,
-                  fontWeight: FontWeight.bold),
+             SizedBox(
+               height: 26.h,
+             ),
+ //صف الاختيارات-------------------------------
+             drowRowButton(context),
+             SizedBox(
+               height: 42.h,
+             ),
+ //النص-------------------------------
+
+             Padding(
+               padding: EdgeInsets.only(left: 28.w, right: 28.w),
+               child: text(context,
+                isSelected == 1
+                   ?  "طلبات الاعلانات الخاصة بك"
+                   : isSelected == 2
+                       ? "طلبات الاهداءات الخاصة بك"
+                       : "طلبات المساحة الاعلانية الخاصة بك",
+                //,
+                 18,
+                  black,
+                   fontWeight: FontWeight.bold),
+             ),
+
+             SizedBox(
+               height: 32.h,
             ),
 
-            SizedBox(
-              height: 32.h,
-            ),
+ //الطلبات وفق التصنيف-------------------------------
 
-//الطلبات وفق التصنيف-------------------------------
-
-            Expanded(
+             Expanded(
               flex: 4,
               child: isSelected == 1
-                  ? const Advertisment()
-                  : isSelected == 2
-                      ? const Gift()
-                      : const AdSpace(),
+                   ? const Advertisment()
+                   : isSelected == 2
+                       ? const Gift()
+                       : const AdSpace(),
             ),
-          ]),
+           ]),
         ));
   }
 

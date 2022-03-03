@@ -1,6 +1,7 @@
 import 'package:celepraty/Models/Methods/method.dart';
 import 'package:celepraty/Models/Variabls/varaibles.dart';
 import 'package:celepraty/Users/Explowr/Explower.dart';
+import 'package:celepraty/celebrity/Activity/activity_screen.dart';
 import 'package:celepraty/celebrity/Brand/create_your_brand.dart';
 import 'package:celepraty/celebrity/DiscountCodes/discount_codes_main.dart';
 import 'package:celepraty/celebrity/PrivacyPolicy/privacy_policy.dart';
@@ -9,6 +10,7 @@ import 'package:celepraty/celebrity/TechincalSupport/contact_with_us.dart';
 import 'package:celepraty/celebrity/blockList.dart';
 import 'package:celepraty/celebrity/celebrityHomePage.dart';
 import 'package:celepraty/celebrity/chat/chatsList.dart';
+import 'package:celepraty/celebrity/invoice/invoice_screen.dart';
 import 'package:celepraty/celebrity/setting/profileInformation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -52,7 +54,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
   final List<Widget> page = [
     profileInformaion(),
 
-    Explower(),
+    invoiceScreen(),
     profileInformaion(),
     celebrityHomePage(),
 
@@ -61,7 +63,7 @@ class _celebratyProfileState extends State<celebratyProfile> {
     DiscountCodes(),
 
     profileInformaion(),
-    profileInformaion(),
+    ActivityScreen(),
 
     PrivacyPolicyMain(),
     blockList(),

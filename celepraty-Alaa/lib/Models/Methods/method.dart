@@ -143,14 +143,7 @@ Widget gradientContainerWithHeight(double width, double height, Widget child) {
     child:child,
     decoration:  BoxDecoration(
       borderRadius: BorderRadius.only( bottomLeft: Radius.circular(10.0.r), topLeft: Radius.circular(10.0.r),),
-      gradient: const LinearGradient(
-        begin: Alignment(0.7, 2.0),
-        end: Alignment(-0.69, -1.0),
-        colors: [Color(0xff0ab3d0), Color(0xffe468ca)],
-        stops: [0.0, 1.0],
-
-      ),
-
+      color: lightGrey
     ),
 
 
@@ -279,7 +272,7 @@ Widget singWthisButtom(
       SizedBox(
         width: 16.92.w,
       ),
-      text(context, key, 11.sp, textColor)
+      text(context, key, 13.sp, textColor)
     ]),
     style: ButtonStyle(
       backgroundColor: MaterialStateProperty.all(backColor),
@@ -371,12 +364,12 @@ Widget textFieldNoIcon2(
     decoration: InputDecoration(
         isDense: false,
         filled: true,
-        hintStyle: TextStyle(color: black, fontSize: fontSize.sp, fontFamily: 'Cairo'),
+        hintStyle: TextStyle(color: grey, fontSize: fontSize.sp, fontFamily: 'Cairo'),
         fillColor: textFieldBlack2.withOpacity(0.70),
         labelStyle: TextStyle(color: grey, fontSize: fontSize.sp),
         border: OutlineInputBorder(borderRadius: BorderRadius.only( bottomRight: Radius.circular(10.0), topRight: Radius.circular(10.0),)),
         focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: pink,width: 1)),
-        labelText: key,
+        hintText: key,
 
         contentPadding: EdgeInsets.all(10.h)),
   );
@@ -426,6 +419,50 @@ Widget textFeildWithButton(context, child1, child2) {
     });
   }
 
+
+void showBottomSheettInvoice(context,  buttomMenue){
+  showModalBottomSheet(
+      isScrollControlled: true,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(topLeft:  Radius.circular(20), topRight: Radius.circular(20)),
+      ),
+      context: context, builder:(context){
+    return Container(
+      height: 670.h,
+      child: buttomMenue,
+    );
+  });
+}
+void showBottomSheett2(context,  buttomMenue){
+  showModalBottomSheet(
+      isScrollControlled: true,
+      elevation: 0,
+      backgroundColor: Colors.transparent,
+      context: context, builder:(context){
+    return Container(
+      decoration: BoxDecoration( borderRadius: BorderRadius.circular(20)),
+      // margin: EdgeInsets.only(right: 10, left: 10),
+      // color: Colors.transparent.withOpacity(0.5),
+      height: 250.h,
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.only(left: 5, right:  5),
+            height: 180.h,
+            child: buttomMenue,
+            decoration: BoxDecoration(  color: white, borderRadius: BorderRadius.circular(8)),
+          ),
+          SizedBox(height: 10.h,),
+          InkWell(
+              child: Container(alignment: Alignment.center, height:45.h, width: 400.w, child: text(context, 'الغاء', 20, purple, align: TextAlign.center),
+                decoration: BoxDecoration(color: fillWhite , borderRadius: BorderRadius.circular(8)),),
+            onTap: (){Navigator.pop(context);}),
+        ],
+      ),
+    );
+  });
+}
+
   Widget uploadImg(double width, double hight, child , onTap){
   return InkWell(
     child: Container(
@@ -462,10 +499,10 @@ Future<void> tableCalendar(context, dateTime)async {
 }
 
 //====================== image file picker ===================================
-Future  pickImage(imagee) async {
+Future<File?>  pickImage(imagee) async {
   try{
     final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-    if(image == null) return;
+    if(image == null) return null;
     final temp = File(image.path);
     imagee = temp;
     }on PlatformException catch (e){print('could not pick image $e');}
@@ -620,4 +657,18 @@ drawAppBar(Widget title, BuildContext context ,{ Color color = deepwhite }){
     elevation: 0,
 
   );
+}
+List<DropdownMenuItem<Object?>> buildDropdownTestItems(List _testList) {
+  List<DropdownMenuItem<Object?>> items = [];
+  for (var i in _testList) {
+    items.add(
+      DropdownMenuItem(
+        alignment: Alignment.centerRight,
+        value: i,
+        child: Text(i['keyword']),
+
+      ),
+    );
+  }
+  return items;
 }
